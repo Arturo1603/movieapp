@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Card, Container, Grid, TextField, Typography } from "@mui/material";
-import { MenuBar } from "../../components";
+import { Box, Button, Card, Container, Grid, TextField, Typography } from "@mui/material";
 
 const SearchView = () => {
     const [searchText, setSearchText] = useState("");
 
+    // desestructuramos la funcion logout para el deslogueo
     const history = useNavigate();
 
     // const handleInputChange = (event) =>{
@@ -16,11 +16,11 @@ const SearchView = () => {
     }
 
     const handleSearchButton = () => {
+        if(searchText === "") return;
         history(`/search/${searchText}`);
     }
     return (
-        <div>
-            <MenuBar/>
+        <Box>
             <Container
                 sx={{
                     display: "flex",
@@ -68,7 +68,7 @@ const SearchView = () => {
                     </Grid>
                 </Card>
             </Container>
-        </div>
+        </Box>
     )
 }
 export default SearchView;

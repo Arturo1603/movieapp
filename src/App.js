@@ -1,12 +1,17 @@
+import { AuthProvider, MovieFavoriteProvider } from "./context";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
 import Router from "./router";
 
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<Router />
-		</ThemeProvider>
+		<AuthProvider>
+			<MovieFavoriteProvider>
+				<ThemeProvider theme={theme}>
+					<Router />
+				</ThemeProvider>
+			</MovieFavoriteProvider>
+		</AuthProvider>
 	);
 }
 

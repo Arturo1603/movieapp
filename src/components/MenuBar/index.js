@@ -1,7 +1,7 @@
 import { Button, Box, Card, Container, Grid, TextField, Typography,
     Toolbar, AppBar } from "@mui/material";
 import LogoutIcon from '@mui/icons-material/Logout'
-const MenuBar = () =>{
+const MenuBar = ({text, children}) =>{
     return (
         <AppBar position="static">
                 <Toolbar>
@@ -11,11 +11,9 @@ const MenuBar = () =>{
                             flexGrow: 1,
                         }}
                     >
-                        Arturo
+                        {text}
                     </Typography>
-                    <LogoutIcon color="red">
-                        <Button color="red"></Button>
-                    </LogoutIcon>
+                    {children}
                 </Toolbar>
         </AppBar>
     )
